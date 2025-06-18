@@ -18,5 +18,5 @@ Always remember to check all of these!
   - -u 'test' -p ''
   - -u 'test' -p 'test'
   - -u '' -p 'test'
-- netexec's SMB module is quite handy for password spraying, etc. See (the netexec wiki)[https://www.netexec.wiki/] for further reference.
+- netexec's SMB module is quite handy for password spraying, etc. See [the netexec wiki](https://www.netexec.wiki/) for further reference.
 - with smbmap, use -r to recursively list shares and --depth to specify recursion depth. Usually 5 is sufficient to uncover anything
