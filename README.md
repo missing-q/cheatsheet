@@ -26,4 +26,4 @@ Always remember to check all of these!
   - It's pretty common to not be able to connect to LDAP without a proper bind. If you have a password you want to try spraying but don't know any usernames, Kerbrute can be a useful option:
   - `./kerbrute userenum -d domain.htb --dc <ip> -t 100 -o kerbrute.log /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt`
   - If you have any files, check the exif data! It can give you the general username format as well as a valid username to try against.
-  - If you have access to SMB, try RID cycling to fetch usernames!
+  - If you have access to SMB, try RID cycling to fetch usernames! (Relevant [nxc wiki entry](https://www.netexec.wiki/smb-protocol/enumeration/enumerate-users-by-bruteforcing-rid))
