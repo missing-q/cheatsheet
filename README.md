@@ -20,3 +20,8 @@ Always remember to check all of these!
   - -u '' -p 'test'
 - netexec's SMB module is quite handy for password spraying, etc. See [the netexec wiki](https://www.netexec.wiki/) for further reference.
 - with smbmap, use -r to recursively list shares and --depth to specify recursion depth. Usually 5 is sufficient to uncover anything
+###LDAP:
+- #1 priority should be collecting LDAP info for Bloodhound - there's minute differences on how each collector behaves, but I've generally found that SharpHound > Rusthound > nxc. Sharphound can typically only be used on the remote machine though, so for collecting info remotely Rusthound is the preferred option. I know some folks use bloodhound-python but I haven't had much success with it. Sharphound can pick up on some info that the remote collectors can't so as soon as you get a foothold, make sure to deploy it and re-scan!
+- User enumeration:
+  - It's pretty common to not be able to connect to LDAP without a proper bind. If you have a password you want to try spraying but don't know any usernames, Kerbrute can be a useful option:
+  - ./kerbrute userenum -d domain.htb --dc <ip> -t 100 -o kerbrute.log /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt
