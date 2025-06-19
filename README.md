@@ -32,4 +32,4 @@ Always remember to check all of these!
   - Check for writable objects with bloodyAD; oftentimes some permissions are too granular to not show up on Bloodhound
   - `bloodyAD --host DC.domain.htb -d domain.htb -u 'user' -p 'pass' get writable`
   - Check for ADCS exploits with certipy:
-  - `certipy-ad find --dc-ip <ip> -u 'user' -p 'pass' -text`
+  - `certipy-ad find --dc-ip <ip> -u 'user@domain.htb' -p 'pass' -text`
