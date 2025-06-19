@@ -27,6 +27,7 @@ Always remember to check all of these!
   - `./kerbrute userenum -d domain.htb --dc <ip> -t 100 -o kerbrute.log /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt`
   - If you have any files, check the exif data! It can give you the general username format as well as a valid username to try against.
   - If you have access to SMB, try RID cycling to fetch usernames! (Relevant [nxc wiki entry](https://www.netexec.wiki/smb-protocol/enumeration/enumerate-users-by-bruteforcing-rid))
+  - Once you do have access, don't forget to check user descriptions / custom LDAP attributes /etc, since sometimes passwords can be stored inside
 - Anytime you get access to a new user:
   - Bloodhound data collection!!
   - Check for writable objects with bloodyAD; oftentimes some permissions are too granular to not show up on Bloodhound
