@@ -4,7 +4,10 @@ This is just a personal cheatsheet for OSCP study/HackTheBox/whatever & is prima
 ## Enumeration
 ### Web:
 Always remember to check all of these!
-- Subdomains: `ffuf -u http://<ip> -H "Host: FUZZ.domain.htb" -w /usr/share/seclists/Discovery/DNS/combined_subdomains.txt -ac`
+- Subdomains:
+- `ffuf -u http://<ip> -H "Host: FUZZ.domain.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -ac`
+- `ffuf -u http://<ip> -H "Host: FUZZ.domain.htb" -w /usr/share/seclists/Discovery/DNS/combined_subdomains.txt -ac`
+  - Try the smaller list first, since combined_subdomains has significantly more "unlikely" subdomains!!
   - -ac usually filters out the false positive responses, but if they slip through somehow you may have to try filtering by word, line count, regex, etc
 - Subdirectories with BOTH ffuf and feroxbuster: (since feroxbuster works combinatorially testing it with combined_directories or any other very long wordlist is inadvisable, so it's best to use a shorter wordlist for it and a longer one for ffuf).
   - `ffuf -u http://domain.htb/FUZZ -w /usr/share/seclists/Discovery/Web-Content/combined_directories.txt -ac`
